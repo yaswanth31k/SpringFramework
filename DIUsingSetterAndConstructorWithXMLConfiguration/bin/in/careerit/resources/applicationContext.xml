@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+	<!-- <bean class="in.careerit.beans.Address" id="add1">
+		<property name="plotNo" value="62w"/>
+		<property name="houseNo" value="1-22"/>
+		<property name="street" value="vani"/>
+		<property name="city" value="hyd"/>
+		<property name="pincode" value="500001"/>
+	</bean>
+	<bean class="in.careerit.beans.Student" id="student">
+		<property name="stuId" value="1001"/>
+		<property name="stuName" value="yash"/>
+		<property name="emailId" value="yash@gmail.com"/>
+		<property name="address" ref="add1"/>
+	</bean>
+ --> 
+ 
+ 	<bean class="in.careerit.beans.Address" id="add1">
+		<constructor-arg  value="62w"/>
+		<constructor-arg value="1-22"/>
+		<constructor-arg value="vani"/>
+		<constructor-arg value="hyd"/>
+		<constructor-arg value="500001"/>
+	</bean>
+	
+	<bean class="in.careerit.beans.Student" id="student">
+		<constructor-arg value="1001"/>
+		<constructor-arg value="yash"/>
+		<constructor-arg value="yash@gmail.com"/>
+		<constructor-arg ref="add1"/>
+	</bean>
+ 
+ </beans>

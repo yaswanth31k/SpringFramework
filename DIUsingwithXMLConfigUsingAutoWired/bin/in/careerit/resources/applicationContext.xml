@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    
+<!--     <bean class="in.careerit.beans.Address" id="pAddress">
+    	<property name="plotNo" value="62w" />
+    	<property name="houseNo" value="1-55" />
+    	<property name="street" value="vani" />
+    	<property name="city" value="hyd" />
+    	<property name="pincode" value="20000" />
+    </bean>
+    
+    <bean class="in.careerit.beans.Address" id="cAddress" autowire-candidate="false">
+    	<property name="plotNo" value="23" />
+    	<property name="houseNo" value="342" />
+    	<property name="street" value="ram nager" />
+    	<property name="city" value="bang" />
+    	<property name="pincode" value="5000001" />
+    </bean>
+    
+    <bean class="in.careerit.beans.Student" id="student" autowire="byType"> byType only one beans in address type
+    <bean class="in.careerit.beans.Student" id="student" autowire="byName">for == byConstructor
+    	<property name="stuId" value="1001" />
+    	<property name="stuName" value="yash" />
+    	<property name="emailId" value="yash@gmail.com" />
+    	<property name="pAddress" ref="add1" />
+		<property name="cAddress" ref="add2" />
+    	
+    </bean> -->
+    
+    
+     <bean class="in.careerit.beans.Address" id="pAddress">
+    	<constructor-arg value="62w" />
+    	<constructor-arg value="1-55" />
+    	<constructor-arg value="vani" />
+    	<constructor-arg value="hyd" />
+    	<constructor-arg value="20000" />
+    </bean>
+    
+    <bean class="in.careerit.beans.Address" id="cAddress" autowire-candidate="false">
+    	<constructor-arg value="23" />
+    	<constructor-arg value="342" />
+    	<constructor-arg value="ram nager" />
+    	<constructor-arg value="bang" />
+    	<constructor-arg value="5000001" />
+    </bean>
+    
+    <!-- <bean class="in.careerit.beans.Student" id="student" autowire="byType"> byType only one beans in address type-->
+    <bean class="in.careerit.beans.Student" id="student" autowire="constructor"><!-- for == Constructor -->
+    	<constructor-arg value="1001"  index="0"/>
+    	<constructor-arg value="yash" index="1"/>
+    	<constructor-arg value="yash@gmail.com" index="2"/>
+    	<!-- <property name="pAddress" ref="add1" />
+		<property name="cAddress" ref="add2" />
+    	
+ -->    </bean>
+</beans>
